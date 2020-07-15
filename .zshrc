@@ -31,29 +31,9 @@ KUBE_PS1_SUFFIX=" ‖"
 
 source $ZSH/oh-my-zsh.sh
 
-export GOPATH=$HOME/workspace/go
-export GO111MODULE=on
-export JAVA_HOME=$HOME/jdk-12.0.2+10/Contents/Home
-export PATH="/usr/local/opt/python/libexec/bin:$JAVA_HOME/bin:$HOME/jdk-12.0.2+10-jre/Contents/Home/bin:$(go env GOPATH)/bin:$HOME/workspace/openapi/:$PATH"
-export ANDROID_HOME=$HOME/Library/Android/sdk/
-export ANDROID_NDK=$HOME/Library/Android/sdk/ndk-bundle/
-export ANDROID_SDK=$HOME/Library/Android/sdk/
-export CLOUDSDK_PYTHON=$(which python)
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-eval "$(~/workspace/yv/bin/yv init -)"
 eval "$(direnv hook zsh)"
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-eval "$(~/workspace/lcc/bin/lcc init -)"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/brian.manson/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/brian.manson/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/brian.manson/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/brian.manson/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Color numbers:
 #     Black - 0
