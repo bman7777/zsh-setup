@@ -9,3 +9,6 @@ https://github.com/ohmyzsh/ohmyzsh
 
 ## install hackersaurus
 https://github.com/bhilburn/hackersaurus
+
+## direnv
+sudo apt install direnv
