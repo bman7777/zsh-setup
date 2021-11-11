@@ -10,5 +10,8 @@ https://github.com/ohmyzsh/ohmyzsh
 ## install hackersaurus
 https://github.com/bhilburn/hackersaurus
 
+## install mcfly
+https://github.com/cantino/mcfly
+
 ## direnv
 sudo apt install direnv
