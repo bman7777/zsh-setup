@@ -46,16 +46,10 @@ eval "$(mcfly init zsh)"
 #     Cyan - 6
 #     White - 7
 
-if [ "$(/usr/bin/whoami)" = "root" ]; then
-	USERCOLOR=red
-else
-	USERCOLOR=cyan
-fi
-
 local return_code="%(?..%B%F{1}✖%f%b)"
 
 ZSH_THEME_GIT_PROMPT_PREFIX=" %B%f%F{3}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%b ‖"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%b"
 ZSH_THEME_GIT_PROMPT_DIRTY="%f%F{1}⚡%f"
 ZSH_THEME_GIT_PROMPT_AHEAD="%f%F{3}↑%f"
 ZSH_THEME_GIT_PROMPT_CLEAN="%f%F{2}✓%f"
@@ -74,23 +68,10 @@ export TIMER_PRECISION=2
 ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX="⑊%B%F{2}"
 ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX="%{$reset_color%}%f%b"
 
-function virtualenv_prompt_info() {
-    if [ -n "$VIRTUAL_ENV" ]; then
-        if [ -f "$VIRTUAL_ENV/__name__" ]; then
-            local name=`cat $VIRTUAL_ENV/__name__`
-        elif [ `basename $VIRTUAL_ENV` = "__" ]; then
-            local name=$(basename $(dirname $VIRTUAL_ENV))
-        else
-            local name=$(basename $VIRTUAL_ENV)
-        fi
-        echo "$ZSH_THEME_VIRTUAL_ENV_PROMPT_PREFIX$name$ZSH_THEME_VIRTUAL_ENV_PROMPT_SUFFIX"
-    fi
-}
 
 PROMPT='%B%F{7}%f\
 $(kube_ps1)\
-$(git_prompt_info)\
- %F{$USERCOLOR}%n%F{7}$(virtualenv_prompt_info) ⟫ %f\
+$(git_prompt_info) ⟫ %f\
 %F{7}%~%{$reset_color%}%f%b\
 %F{2}%B ➜ %b%f'
 
