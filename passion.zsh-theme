@@ -70,7 +70,7 @@ function k8s() {
 
 # git
 ZSH_THEME_GIT_PROMPT_PREFIX="♆%{\x1b[3m%}%{$FG[232]%}";
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{\x1b[0m%}} ";
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}%{\x1b[0m%}";
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg_no_bold[red]%}✖%{$FG[232]%}";
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[232]%}";
 
@@ -218,4 +218,4 @@ TRAPALRM() { # cspell:disable-line
 
 
 # prompt
-PROMPT='$(k8s) 𝞝 {%{$FG[220]%}$(pyenv_prompt_info)%{$reset_color%}$(git_status)$(directory)$(command_status) ';
+PROMPT='$(k8s) 𝞝 {%{$FG[220]%}$(pyenv_prompt_info)%{$reset_color%}$(git_status)} $(directory)$(command_status) ';
